@@ -19,6 +19,6 @@ class MakePost(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
-	('/makepost', MakePost),
+	('/makePost', MakePost),
 	
 ], debug=True)
