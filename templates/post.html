@@ -13,11 +13,18 @@
 
   </head>
     <body>
-        <form action="/" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
-                
-         <input type="text" name="subject" id="subjectId" ></input>
-         <input type="text" name="location" id="locationID" ></input>
-         <input type="text" name="description" id="descriptionID" ></input>
+        <form action="/post" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
+          Enter your name: <br>      
+         <input type="text" name="name"><br><br>
+		  Enter your original location (city, state, zipcode): <br>
+		  <input type = "text" name = "origin"> <br><br>
+		  Enter your destination (city, state, zipcode): <br>
+         <input type="text" name="destination"><br><br>
+		  Enter your contact information (email or phone number): <br>
+		  <input type="text" name = "contactInfo"><br><br>
+		  Describe the nature of your trip:<br>
+          <textarea name = "description" rows = "10" cols = "50" onclick="this.focus();this.select()">Enter description here.</textarea> <br><br>
+		  <input type = "submit" value = "Submit trip"><br>
         </form>
     </body>
 </html>
