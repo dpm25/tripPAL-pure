@@ -1,14 +1,19 @@
 import webapp2
 import os
 import sys
+import time
 
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
 
 class Trip (db.Model):
-	trip_owner = db.StringProperty()
-	origin = db.StringProperty()
-	destination = db.StringProperty()
+	name = db.StringProperty()
+	origin_city = db.StringProperty()
+	origin_state = db.StringProperty()
+	origin_zip = db.StringProperty()
+	dest_city = db.StringProperty()
+	dest_state = db.StringProperty()
+	dest_zip = db.StringProperty()
 	contact = db.StringProperty()
 	description = db.StringProperty(multiline = True)
 	time = db.IntegerProperty()
@@ -29,18 +34,34 @@ class MakePost(webapp2.RequestHandler):
 class AcceptPost(webapp2.RequestHandler):
 	def post(self):
 		trip = Trip()
-		trip.trip_owner = self.request.get('name')
-		trip.origin = self.request.get('origin')
-		trip.destination = self.request.get('destinaton')
+		trip.name = self.request.get('name')
+		trip.origin_city = self.request.get('origin_city')
+		trip.origin_state = self.request.get('origin_state')
+		trip.origin_zip = self.request.get('origin_zip')
+		trip.dest_city = self.request.get('dest_city')
+		trip.dest_state = self.request.get('dest_state')
+		trip.dest_zip = self.request.get('dest_zip')
 		trip.contact = self.request.get('contactInfo')
 		trip.description = self.request.get('description')
 		trip.time = int(time.time())
 		trip.put()
 		self.redirect('/')
-		
+
+class viewPost(webapp2.RequestHandler):
+	def get(self):
+
+		trip_posted = Trip.all()
+		trip_posted.order("-time")
+
+		params = {
+			'trip_posted': trip_posted
+		}
+
+		render_template(self, 'view.html', params)
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
 	('/makePost', MakePost),
-	('/acceptPost', AcceptPost)
+	('/acceptPost', AcceptPost),
+	('/viewPost', viewPost),
 ], debug=True)

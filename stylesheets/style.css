@@ -17,6 +17,7 @@ body {
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   padding-bottom: 19px;
@@ -35,7 +36,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 400px;
   }
 }
 .container-narrow > hr {
@@ -81,4 +82,39 @@ body {
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
   vertical-align: middle;
+}
+
+#searchForm{
+    /* The search form. */
+    background-color:#4C5A65;
+    padding:50px 50px 30px;
+    margin:80px 0;
+    position:relative;
+
+    -moz-border-radius:16px;
+    -webkit-border-radius:16px;
+    border-radius:16px;
+}
+
+fieldset{
+    border:none;
+}
+
+#s{
+    /* The search text box. */
+
+    border:none;
+    color:#888888;
+    background:url("img/searchBox.png") no-repeat;
+
+    float:left;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:15px;
+    height:36px;
+    line-height:36px;
+    margin-right:12px;
+    outline:medium none;
+    padding:0 0 0 35px;
+    text-shadow:1px 1px 0 white;
+    width:385px;
 }
