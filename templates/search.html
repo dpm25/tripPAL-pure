@@ -33,7 +33,7 @@
 
         <div class="jumbotron">
 		  {%if trip_posted.count%}
-          <h3>Posted trips ({{trips}}):</h3>
+          <h3>Found trips ({{trips}}):</h3>
           <table class="table table-bordered">
             <thead>
                 <tr>
@@ -60,7 +60,7 @@
               </tbody>
           </table>
 		 {% else %}
-		 <h3>No trips have been posted.</h3>
+		 <h3>No trips were found.</h3>
 		 {% endif %}
         </div>
     </body>

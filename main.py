@@ -49,19 +49,41 @@ class AcceptPost(webapp2.RequestHandler):
 
 class viewPost(webapp2.RequestHandler):
 	def get(self):
-
+		trips = 0
 		trip_posted = Trip.all()
 		trip_posted.order("-time")
+		
+		for each in trip_posted:
+			trips += 1
 
 		params = {
-			'trip_posted': trip_posted
+			'trip_posted': trip_posted,
+			'trips': trips
 		}
 
 		render_template(self, 'view.html', params)
+
+class searchPost (webapp2.RequestHandler):
+	def post (self):
+		trips = 0
+		search = self.request.get('searchBar')
+		q = Trip.all()
+		q.filter('dest_city =', search)
+		q.order('-time')
+		
+		for each in q:
+			trips +=1
+			
+		params = {
+			'trip_posted': q,
+			'trips': trips
+		}
+		render_template(self, 'search.html', params)
 
 app = webapp2.WSGIApplication([
     ('/', MainPage),
 	('/makePost', MakePost),
 	('/acceptPost', AcceptPost),
 	('/viewPost', viewPost),
+	('/searchPost', searchPost)
 ], debug=True)
