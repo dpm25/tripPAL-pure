@@ -13,11 +13,12 @@ indexes:
 - kind: Trip
   properties:
   - name: dest_city
+  - name: origin_city
   - name: time
     direction: desc
 
 - kind: Trip
   properties:
-  - name: destination_city
+  - name: dest_city
   - name: time
     direction: desc
