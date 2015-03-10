@@ -1,41 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
-
-    <!-- JS -->
-    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active" >
-            <a href="/"> Home </a>
-          </li>
-          <li>
-            <a href="/makePost">Submit a Trip</a>
-          </li>
-          <li>
-            <a href="/viewPost">View Trips</a>
-          </li>
-          
-          <li><a href="https://www.google.com">Log in</a></li>
-          
-        </ul>
-        <h3 class="text-muted">tripPAL</h3>
-      </div> <!-- End Header -->
-
+{% extends "base_template/base.html" %}
+{% block bodycontent %}
       
       <div class="jumbotron">
         <h1 align="center">tripPAL</h1>
-		<p align ="center">Search by entering your desired city destination:</p>
+		<p align = "center">Search by entering your desired city destination:</p>
 		  <form = action="/searchPost" method = "POST" align = "center">
-		  <input type = "text" name = "searchBar" align="center"><br><br>
+		  <input type = "text" name = "searchBar"><br><br>
 		  <input type = "submit" value = "Search"><br>
 		  </form>
         <!--p align="center"><a id="sign-up-button" class="btn btn-lg btn-success" href=""
@@ -54,10 +24,4 @@
         </div>
       </div>
 
-
-      <div align = "center" class="footer">
-        <p>&copy; tripPAL 2015</p>
-      </div> <!-- End Footer -->
-    </div> <!-- End Container -->
-  </body>
-</html>
+{% endblock %}

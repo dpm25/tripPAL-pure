@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- JS -->
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li class="active" >
+            <a href="/"> Home </a>
+          </li>
+          <li>
+            <a href="/makePost">Submit a Trip</a>
+          </li>
+          <li>
+            <a href="/viewPost">View Trips</a>
+          </li>
+          
+          <li><a href="https://www.google.com">Log in</a></li>
+          
+        </ul>
+        <h3 class="text-muted">tripPAL</h3>
+      </div> <!-- End Header -->
+
+      {% block bodycontent %}
+      {% endblock %}
+
+        <div align = "center" class="footer">
+        <p>&copy; tripPAL 2015</p>
+      </div> <!-- End Footer -->
+    </div> <!-- End Container -->
+  </body>
+</html>
