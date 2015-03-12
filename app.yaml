@@ -6,9 +6,11 @@ threadsafe: yes
 
 handlers:
 
+- url: /static.*
+  static_dir: static
+  
 - url: /stylesheets
   static_dir: stylesheets
 
 - url: /.*
   script: main.app
-

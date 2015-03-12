@@ -2,15 +2,15 @@
 from google.appengine.ext import ndb
 
 class Trip (ndb.Model):
-	name = db.StringProperty()
+	name = ndb.StringProperty()
 	
-	origin_city = db.StringProperty()
-	origin_state = db.StringProperty()
-	origin_zip = db.IntegerProperty()
+	origin_city = ndb.StringProperty()
+	origin_state = ndb.StringProperty()
+	origin_zip = ndb.IntegerProperty()
 	
-	dest_city = db.StringProperty(indexed = True)
-	dest_state = db.StringProperty()
-	dest_zip = db.StringProperty()
+	dest_city = ndb.StringProperty(indexed = True)
+	dest_state = ndb.StringProperty()
+	dest_zip = ndb.IntegerProperty()
 	
-	description = db.StringProperty(multiline = True)
-	time = db.IntegerProperty()
+	description = ndb.StringProperty()
+	time = ndb.IntegerProperty()

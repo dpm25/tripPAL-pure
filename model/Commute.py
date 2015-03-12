@@ -1,4 +1,4 @@
-from google.appenginge.ext import ndb
+from google.appengine.ext import ndb
 
 class Commute (ndb.Model):
 	name = ndb.StringProperty()
@@ -13,7 +13,7 @@ class Commute (ndb.Model):
 	dest_state = ndb.StringProperty()
 	dest_zip = ndb.IntegerProperty(indexed = True)
 	
-	description = ndb.StringProperty(multiline = True)
+	description = ndb.StringProperty()
 	date = ndb.DateTimeProperty (auto_now = True)
 	
 	monday = ndb.BooleanProperty()

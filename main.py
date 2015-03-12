@@ -1,6 +1,7 @@
 import webapp2
 
 from google.appengine.ext.webapp import template
+from google.appengine.ext import ndb
 from google.appengine.ext import db
 
 from controllers.SearchPost import *
