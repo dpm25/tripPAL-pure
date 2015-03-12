@@ -2,21 +2,22 @@
 {% block bodycontent %}
 
         <div class="jumbotron">
-          <form action="/profile" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
+          <form action="/submitProfile" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
            Personal Information: <br><br>      
-     	   <label>First name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+     	   <label>First name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
 		   <input type = "text" name = "fname">&nbsp&nbsp
-		   <label>Last name&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "lname"><br><br>
+		   <label>Last name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "lname"><br><br>
 
-		   <label>Email&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "email"><br><br>
+		   <label>Phone:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "phone"><br><br>
 
-		   <label>address&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "address"><br><br>
+		   <label>Address&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "address"><br><br>
 
-		   <label>city&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "email"><br><br>
+		   <label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "city"><br><br>
 
-		   <label>state&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "email"><br><br>
+		   <label>State&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "state"><br><br>
 
-		   <label>zip&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "email"><br>
+		   <label>Zip&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "zip"><br>
+		   <input type = "submit" value = "Submit"><br>
           </form>
         </div>
 
