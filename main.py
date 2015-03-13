@@ -9,6 +9,7 @@ from controllers.AcceptPost import *
 from controllers.ViewPost import *
 from controllers.MakePost import *
 from controllers.Profile import *
+from controllers.viewProfile import *
 
 def render_template(handler, templatename, templatevalues):
 	path = os.path.join(os.path.dirname(__file__), "templates/", templatename)
@@ -45,5 +46,6 @@ app = webapp2.WSGIApplication([
 	('/acceptPost', AcceptPost),
 	('/viewPost', ViewPost),
 	('/searchPost', SearchPost),
-	('/submitProfile', Profile)
+	('/submitProfile', Profile),
+	('/viewProfile', ViewProfile)
 ], debug=True)

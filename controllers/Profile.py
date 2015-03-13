@@ -33,3 +33,7 @@ class Profile(webapp2.RequestHandler):
 		profile.time = int(time.time())
 		profile.put()
 		render_template(self, 'index.html', {})
+
+class ViewProfile(webapp2.RequestHandler):
+	def get(self):
+		render_template(self, 'profile.html', {})
