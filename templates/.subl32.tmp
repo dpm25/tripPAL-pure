@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- JS -->
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+      <div class="container">
+        <div class="header">
+          <ul class="nav nav-pills pull-right">
+            <li class="active" >
+              <a href="/"> Home </a>
+            </li>
+            <li>
+              <a href="/makePost">Submit a Trip</a>
+            </li>
+            <li>
+              <a href="/search">Search a Trip</a>
+            </li>
+            
+            <li><a href="https://www.google.com">Log in</a></li>
+            
+          </ul>
+          <h3 class="text-muted">tripPAL</h3>
+        </div> <!-- End Header -->
+
+        <div class="jumbotron">
+          <table "table-striped vert-align-center">
+            <thead>
+                <tr>
+                    <th>Contact</th>
+                    <th>Description</th>
+                    <th>Destination</th>
+                    <th>Origin</th>
+                    <th>Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{trip_posted.size}}
+              {% for trip in trip_posted %}
+                <tr>
+                  <td>{{trip.contact}}</td>
+                  <td>{{trip.description}}</td>
+                  <td>{{trip.destination}}</td>
+                  <td>{{trip.origin}}</td>
+                  <td>{{trip.trip_owner}}</td>
+                  <!-- td>
+                    <form method="post" autocomplete="off" action="/delete_listing">
+                      <input type="hidden" name="delete_key" value="{{trip.key}}" />
+                      <input type="submit" name="deleteButton" value="Delete"
+                             class="btn btn-danger"></input>
+                    </form>
+                  </td -- >
+                </tr>
+                {% endfor %}
+          </table>
+        </div>
+    </body>
+</html>

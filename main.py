@@ -1,4 +1,5 @@
 import webapp2
+import os
 
 from google.appengine.ext.webapp import template
 from google.appengine.ext import db
@@ -10,6 +11,7 @@ from controllers.ViewPost import *
 from controllers.MakePost import *
 from controllers.Profile import *
 from controllers.viewProfile import *
+from controllers.Mail import *
 
 def render_template(handler, templatename, templatevalues):
 	path = os.path.join(os.path.dirname(__file__), "templates/", templatename)
@@ -47,5 +49,6 @@ app = webapp2.WSGIApplication([
 	('/viewPost', ViewPost),
 	('/searchPost', SearchPost),
 	('/submitProfile', Profile),
-	('/viewProfile', ViewProfile)
+	('/viewProfile', ViewProfile),
+	('/contactUs', ContactUs)
 ], debug=True)

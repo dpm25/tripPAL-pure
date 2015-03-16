@@ -3,22 +3,68 @@
 
         <div class="jumbotron">
           <form action="/submitProfile" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
-           Personal Information: <br><br>      
-     	   <label>First name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-		   <input type = "text" name = "fname">&nbsp&nbsp
-		   <label>Last name:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "lname"><br><br>
+           <legend>Personal Information </legend> 
+        <div class="row input-group">  
+        	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        	<div class="col-xs-6 col-md-6"> 
+		   		<input type = "text" name = "fname" value="" class="form-control input-lg" placeholder="First Name">
+		   	</div>
+		   	<div class="col-xs-6 col-md-6"> 
+		   		<input type = "text" name = "lname" value="" class="form-control input-lg" placeholder="Last Name">
+		   	</div>
+		</div>
+		<br>
+			<div class="row input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> 
+				<div class="col-xs-6 col-md-6">
+			   		<input  type = "text" name = "phone" value="" class="form-control input-lg" placeholder="Phone Number">
+			   	</div>
+			</div>
+		<br>
+			<div class="row input-group">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span> 
+				<div class="col-xs-12 col-md-12">
+			   		<input  type = "text" name = "address" value="" class="form-control input-lg" placeholder="Street Address">
+			   	</div>
+			</div>
+		
+		<br>
+			<div class="row input-group">  
+	        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+	        	<div class="col-xs-4 col-md-4"> 
+			   		<input type = "text" name = "city" value="" class="form-control input-lg" placeholder="City">
+			   	</div>
+			   	<div class="col-xs-5 col-md-5"> 
+			   		<input type = "text" name = "state" value="" class="form-control input-lg" placeholder="State">
+			   	</div>
+			   	<div class="col-xs-3 col-md-3"> 
+			   		<input type = "text" name = "zip" value="" class="form-control input-lg" placeholder="Zip Code">
+			   	</div>
+			</div>
+		
+		<br>
+			<div class="row">  
+				<div class="col-xs-2 col-md-2"><strong>Select Profile Picture</strong>
+				</div>
 
-		   <label>Phone:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "phone"><br><br>
-
-		   <label>Address&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "address"><br><br>
-
-		   <label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "city"><br><br>
-
-		   <label>State&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "state"><br><br>
-
-		   <label>Zip&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input  type = "text" name = "zip"><br>
-		   <input type = "submit" value = "Submit"><br>
-          </form>
+	      		<div class="fileinput fileinput-new" data-provides="fileinput">
+	      		<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+					<img data-src="holder.js/100%x100%" alt="...">
+	  			</div>
+	  				<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
+	  				<div>
+						<div class="btn btn-default btn-file">
+						  	<span class="fileinput-new"><button type="button" class="btn btn-success btn-sm" ><span class="glyphicon glyphicon-plus"></span> Select Image</button></span>
+						  	<span class="fileinput-exists"><button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span>Change</button></span>
+	    				  	<input type="file" name="">
+	    				</div>
+	   			 		<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-minus"></span> Remove</button></a>
+	  				</div>
+				</div>
+			</div>
+        <br>
+		<button type="button" value = "Submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+         </form>
         </div>
 
 {% endblock %}

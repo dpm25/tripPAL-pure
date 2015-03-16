@@ -1,0 +1,17 @@
+{% extends "base_template/base.html" %}
+{% block bodycontent %}
+
+        <div class="jumbotron">
+          <form action="/contactUs" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
+           Contact Us! <br><br>      
+     	   <label>From:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "from" required><br><br>
+
+		   <label>Subject:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "subject" required><br><br>
+
+		   Message: <br><br>
+		   <label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label><textarea rows="4" cols="50" name = "message" required></textarea><br><br>
+		   <input type = "submit" value = "Send"><br>
+          </form>
+        </div>
+
+{% endblock %}
