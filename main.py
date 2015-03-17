@@ -12,6 +12,9 @@ from controllers.MakePost import *
 from controllers.Profile import *
 from controllers.viewProfile import *
 from controllers.Mail import *
+from controllers.saveComment import *
+from controllers.fetchHandler import *
+from controllers.ViewEntityHandler import *
 
 def render_template(handler, templatename, templatevalues):
 	path = os.path.join(os.path.dirname(__file__), "templates/", templatename)
