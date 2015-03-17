@@ -64,5 +64,8 @@ app = webapp2.WSGIApplication([
 	('/searchPost', SearchPost),
 	('/submitProfile', Profile),
 	('/viewProfile', ViewProfile),
-	('/contactUs', ContactUs)
+	('/contactUs', ContactUs),
+	('/saveComment', saveComment),
+	('/fetch', fetchHandler),
+	('/view', ViewEntityHandler)
 ], debug=True)

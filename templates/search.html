@@ -2,35 +2,33 @@
 {% block bodycontent %}
 
         <div class="jumbotron">
-		  {%if trip_posted.count%}
+		  {%if trip_posted%}
           <h3>Found trips ({{trips}}):</h3>
           <table class="table table-bordered">
             <thead>
                 <tr>
+					<th>Name</th>
                     <th>Creator</th>
-                    <th>Description</th>
                     <th>City Destination</th>
                     <th>State Destination</th>
                     <th>Zip Destination</th>
-                    <th>Contact Info</th>
                 </tr>
             </thead>
             <tbody class="table-striped">
               {{trip_posted.size}}
               {% for t in trip_posted %}
                 <tr>
-                  <td>{{t.name}}</td>
-                  <td>{{t.description}}</td>
+                  <td><a href="/view?id={{t.key.id}}&type={{type}}">{{t.name}}</a></td>
+                  <td>{{t.creator}}</td>
                   <td>{{t.dest_city}}</td>
                   <td>{{t.dest_state}}</td>
                   <td>{{t.dest_zip}}</td>
-                  <td>{{t.contact}}</td>
                 </tr>
                 {% endfor %}
               </tbody>
           </table>
 		 {% else %}
-		 <h3>No trips were found.</h3>
+		 <h3>Nothing was found.</h3>
 		 {% endif %}
         </div>
     </body>

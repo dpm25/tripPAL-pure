@@ -4,10 +4,14 @@
       <div class="jumbotron">
         <h1 align="center">tripPAL</h1>
 		<p align = "center">Search by entering your desired city destination:</p>
-		  <form = action="/searchPost" method = "POST" align = "center">
-		  <input type = "text" name = "searchBar"><br><br>
-		  <input type = "submit" value = "Search"><br>
-		  </form>
+			<form = action="/searchPost" method = "POST" align = "center">
+			<select name = "type">
+				<option value = "Commute">Commute</option>
+				<option value = "Trip">Trip</option>
+			</select>
+			<input type = "text" name = "searchBar"><br><br>
+			<input type = "submit" value = "Search"><br>
+			</form>
         <!--p align="center"><a id="sign-up-button" class="btn btn-lg btn-success" href=""
           role="button">Sign up with Google</a></p -->
       </div>
