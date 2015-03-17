@@ -23,6 +23,8 @@ class HomePageHandler(webapp2.RequestHandler):
 	def get(self):
 		# get current user of logged in to google
 		user = users.get_current_user()
+		email = 'unregister user'
+
 		# check if exists
 		if not user:
 			# otherwise redirect to login page
@@ -30,11 +32,23 @@ class HomePageHandler(webapp2.RequestHandler):
 		else:
 			# checking if we have a UserInfo instance in database
 			if self.is_registered(user):
+
+				email = user.email()
+				params = {
+					'tab':			 1,
+					'user':          user,
+             		'email':         email
+				}
 				# yes -> getting the path for index.html
-				render_template(self, 'index.html', {})
+				render_template(self, 'index.html', params)
 
 			else:
-				render_template(self, 'profile.html', {})
+				params = {
+					'tab':			 2,
+					'user':          user,
+             		'email':         email
+				}
+				render_template(self, 'profile.html', params)
 
 	def is_registered(self,user):		
 		# getting the userinfo object

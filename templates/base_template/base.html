@@ -14,10 +14,10 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li>
+          <li {% if tab == 1 %} class = "active" {% endif %}>
             <a href="/"> Home </a>
           </li>
-          <li>
+          <li {% if tab == 2 %} class = "active" {% endif %}>
             <a href="/viewProfile"> Profile </a>
           </li>
           <li>
@@ -27,7 +27,7 @@
             <a href="/viewPost">View Trips</a>
           </li>
           
-          <li><a href="https://www.google.com">Log in</a></li>
+          <li><a href="/logout">{% if user %} Log Out {% else %} Log In {% endif %}</a></li>
           
         </ul>
         <h3 class="text-muted">tripPAL</h3>

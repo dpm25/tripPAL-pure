@@ -31,6 +31,8 @@ class ViewProfile(webapp2.RequestHandler):
 		zip = q[0].zip
 
 		params = {
+			'tab':		2,
+			'user': 	user,
 			'firstname': firstName,
 			'lastname': lastName,
 			'phone': phone,
