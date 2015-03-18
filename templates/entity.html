@@ -49,8 +49,6 @@
 			{% if logged_in == 0 %}
 				Please log in to leave comments.
 			{% else %}
-				{{parent_id}}<br>
-				{{type}}<br>
 				Leave a comment below:<br><br>
 				<textarea placeholder = "Enter comment here..." id = "comment-text" rows = "10" cols = "50"></textarea>
 				<button onclick="addComment({{parent_id}}, {{type}})" type ="button"  >Submit</button>
