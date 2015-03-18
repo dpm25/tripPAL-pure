@@ -15,6 +15,7 @@ from controllers.Mail import *
 from controllers.saveComment import *
 from controllers.fetchHandler import *
 from controllers.ViewEntityHandler import *
+from controllers.LogoutHandler import *
 
 def render_template(handler, templatename, templatevalues):
 	path = os.path.join(os.path.dirname(__file__), "templates/", templatename)
@@ -70,5 +71,6 @@ app = webapp2.WSGIApplication([
 	('/contactUs', ContactUs),
 	('/saveComment', saveComment),
 	('/fetch', fetchHandler),
-	('/view', ViewEntityHandler)
+	('/view', ViewEntityHandler),
+	('/logout', LogoutHandler)
 ], debug=True)
