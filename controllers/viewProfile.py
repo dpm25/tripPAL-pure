@@ -21,24 +21,26 @@ class ViewProfile(webapp2.RequestHandler):
 		nName = user.nickname()
 
 		q = UserInfo.query(UserInfo.nickname == nName).fetch()
+		if not q:
+			self.redirect('/')
+		else:
+			firstName = q[0].firstName
+			lastName = q[0].lastName
+			phone = q[0].phone
+			address = q[0].address
+			city = q[0].city
+			state = q[0].state
+			zip = q[0].zip
 
-		firstName = q[0].firstName
-		lastName = q[0].lastName
-		phone = q[0].phone
-		address = q[0].address
-		city = q[0].city
-		state = q[0].state
-		zip = q[0].zip
-
-		params = {
-			'tab':		2,
-			'user': 	user,
-			'firstname': firstName,
-			'lastname': lastName,
-			'phone': phone,
-			'address': address,
-			'city': city,
-			'state': state,
-			'zip': zip	
-		}
-		render_template(self, 'profile.html', params)
+			params = {
+				'tab':		2,
+				'user': 	user,
+				'firstname': firstName,
+				'lastname': lastName,
+				'phone': phone,
+				'address': address,
+				'city': city,
+				'state': state,
+				'zip': zip	
+			}
+			render_template(self, 'profile.html', params)

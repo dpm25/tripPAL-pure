@@ -4,27 +4,27 @@
 	<script src="static/comment.js"></script>
 	<div class = "jumbotron">
 		{% if type == 0 %}
-			Trip name: {{entity.name}} <br>
-			Origin City: {{entity.origin_city}} <br>
-			Origin State: {{entity.origin_state}} <br>
-			Origin Zip: {{entity.origin_zip}} <br><br>
-			Destination City: {{entity.dest_city}} <br>
-			Destination State: {{entity.dest_state}} <br>
-			Destination Zip: {{entity.dest_zip}} <br><br>
-			Contact Information:<br>
-			{{entity.contact}}<br>
-			Description: <br> {{entity.description}}
+			<strong>Trip name:</strong> {{entity.name}} <br>
+			<strong>Origin City:</strong> {{entity.origin_city}} <br>
+			<strong>Origin State:</strong> {{entity.origin_state}} <br>
+			<strong>Origin Zip:</strong> {{entity.origin_zip}} <br><br>
+			<strong>Destination City:</strong> {{entity.dest_city}} <br>
+			<strong>Destination State:</strong> {{entity.dest_state}} <br>
+			<strong>Destination Zip:</strong> {{entity.dest_zip}} <br><br>
+			<strong>Contact Information:</strong><br>
+			{{entity.contact}}<br><br>
+			<strong>Description:</strong> <br> {{entity.description}} <br><br>
 		{% else %}
-			Commute name: {{entity.name}} <br>
-			Origin City: {{entity.origin_city}} <br>
-			Origin State: {{entity.origin_state}} <br>
-			Origin Zip: {{entity.origin_zip}} <br><br>
-			Destination City: {{entity.dest_city}} <br>
-			Destination State: {{entity.dest_state}} <br>
-			Destination Zip: {{entity.dest_zip}} <br><br>
-			Description: <br> {{entity.description}} <br><br>	
+			<strong>Commute name:</strong> {{entity.name}} <br>
+			<strong>Origin City:</strong> {{entity.origin_city}} <br>
+			<strong>Origin State:</strong> {{entity.origin_state}} <br>
+			<strong>Origin Zip:</strong> {{entity.origin_zip}} <br><br>
+			<strong>Destination City:</strong> {{entity.dest_city}} <br>
+			<strong>Destination State:</strong> {{entity.dest_state}} <br>
+			<strong>Destination Zip:</strong> {{entity.dest_zip}} <br><br>
+			<strong>Description:</strong> <br> {{entity.description}} <br><br>	
 			
-			Days:<br>
+			<strong>Days:</strong><br>
 			{%if entity.monday %}
 				Mon
 			{% endif %}
@@ -44,17 +44,18 @@
 				Sat
 			{% endif %}
 			{%if entity.sunday %}
-				Sun
-			{% endif %}
+				Sun<
+			{% endif %}<br><br>
 		{% endif %}
 		<div id = "comment_box">
 			{% if logged_in == 0 %}
 				Please log in to leave comments.
 			{% else %}
-				Leave a comment below:<br><br>
-				<textarea placeholder = "Enter comment here..." id = "comment-text" rows = "10" cols = "50"></textarea>
-				<button onclick="addComment({{parent_id}}, {{type}})" type ="button"  >Submit</button>
+				Leave a comment below:<br>
+				<textarea placeholder = "Enter comment here..." id = "comment-text" rows = "5" cols = "50"></textarea>
+				<br><button onclick="addComment({{parent_id}}, {{type}})" type ="button"  >Submit</button><br><br>
 			{% endif %}
+			<strong>Comments:</strong><br><br>
 		</div>
 		<div id = 'comment-container'>
 			
