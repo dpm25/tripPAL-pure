@@ -1,0 +1,5 @@
+cron:
+- description: Tuesday night mailout
+  url: /weeklyMail
+  schedule: every tuesday 21:00
+  timezone: Eastern Standard Time/EST
