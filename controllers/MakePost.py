@@ -4,7 +4,7 @@ import sys
 import time
 
 from google.appengine.ext.webapp import template
-from google.appengine.ext import db
+from google.appengine.api import users
 
 from model.Trip import *
 
@@ -15,4 +15,12 @@ def render_template(handler, templatename, templatevalues):
 
 class MakePost(webapp2.RequestHandler):
 	def get(self):
-		render_template(self, 'post.html', {})
+
+		user = users.get_current_user()
+		tab = 3
+
+		params = {
+			'tab':			 3,
+			'user':          user
+		}
+		render_template(self, 'post.html', params)
