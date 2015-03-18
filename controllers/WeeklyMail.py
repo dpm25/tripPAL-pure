@@ -15,7 +15,7 @@ def render_template(handler, templatename, templatevalues):
 
 class WeeklyMail(webapp2.RequestHandler):
 
-	def post(self):
+	def get(self):
 		
 		users = UserInfo.query()
 
@@ -23,6 +23,6 @@ class WeeklyMail(webapp2.RequestHandler):
 			sender = 'pitttrippal@gmail.com'
 			to = user.nickname + '@gmail.com'
 			subject = 'CS 1520 is at 6 pm on Wednesday nights'
-			body = 'Make sure you take good notes. Just a friendly reminder from your good friends a tripPAL'
+			body = 'Make sure you take good notes. Just a friendly reminder from your good friends at tripPAL.'
 			mail.send_mail(sender=sender, to=to, subject=subject, body=body)
 		

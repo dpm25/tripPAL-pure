@@ -16,6 +16,12 @@ indexes:
   - name: date
     direction: desc
 
+- kind: Commute
+  properties:
+  - name: dest_city
+  - name: date
+    direction: desc
+
 - kind: Trip
   properties:
   - name: dest_city

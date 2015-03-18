@@ -12,5 +12,9 @@ handlers:
 - url: /stylesheets
   static_dir: stylesheets
 
+- url: /weeklyMail
+  script: main.app
+  login: admin
+  
 - url: /.*
   script: main.app

@@ -13,5 +13,6 @@ class Trip (ndb.Model):
 	dest_state = ndb.StringProperty()
 	dest_zip = ndb.StringProperty()
 	
+	contact = ndb.StringProperty()
 	description = ndb.StringProperty()
 	time = ndb.IntegerProperty()

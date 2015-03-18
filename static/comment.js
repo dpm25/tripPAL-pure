@@ -39,7 +39,7 @@ function fetch(id, type) {
 }
 
 function addCommentToWall (message, poster) {
-	document.getElementById('comment-container').innerHTML += 'Posted by' + poster + '<br>' + message + '<br><br>';
+	document.getElementById('comment-container').innerHTML += 'Posted by: ' + poster + '<br>' + message + '<br><br>';
 }
 
 window.onload=function() {
