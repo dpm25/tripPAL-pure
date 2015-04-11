@@ -1,70 +1,177 @@
 {% extends "base_template/base.html" %}
 {% block bodycontent %}
+<script type="text/javascript">
+    $(function() {
+      $("#profile").validate(
+        {
+          rules: 
+          {
+            fname: 
+            {
+              required: true,
+              minlength: 3
+            },
+            lname: 
+            {
+              required: true,
+              minlength: 3
+            },
+            phone:
+            {
+              required: true,
+              phoneUS: true
+            },
+            address: 
+            {
+              required: true
+            },
+            city:
+            {
+              required: true,
+              lettersonly: true
+            },
+            zip:
+            {
+              required: true,
+              minlength: 5,
+              maxlength: 5,
+              number: true
+            }
+          },
+          messages: 
+          {
+            fname: 
+            {
+              required: "Please enter your first name"
+            },
+            lname: 
+            {
+              required: "Please enter your last name."
+            },
+            phone:
+            {
+              required: "Please enter a valid phone number"
+            },
+            address:
+            {
+              required: "Please enter a valid address" 
+            },
+            city: {
+              required: "Please enter a valid city"
+            },
+            zip:
+            {
+              required: "Please enter a valid zip"
+            }
+          },
 
-        <div class="jumbotron">
-          <form action="/submitProfile" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
-           <legend>Personal Information </legend> 
-        <div class="row input-group">  
-        	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        	<div class="col-xs-6 col-md-6"> 
-		   		<input type = "text" name = "fname" value="{{ firstname }}" class="form-control input-lg" placeholder="First Name">
-		   	</div>
-		   	<div class="col-xs-6 col-md-6"> 
-		   		<input type = "text" name = "lname" value="{{ lastname }}" class="form-control input-lg" placeholder="Last Name">
-		   	</div>
-		</div>
-		<br>
-			<div class="row input-group">
-				<span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> 
-				<div class="col-xs-6 col-md-6">
-			   		<input  type = "text" name = "phone" value="{{ phone }}" class="form-control input-lg" placeholder="Phone Number">
-			   	</div>
-			</div>
-		<br>
-			<div class="row input-group">
-				<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span> 
-				<div class="col-xs-12 col-md-12">
-			   		<input  type = "text" name = "address" value="{{ address }}" class="form-control input-lg" placeholder="Street Address">
-			   	</div>
-			</div>
-		
-		<br>
-			<div class="row input-group">  
-	        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
-	        	<div class="col-xs-4 col-md-4"> 
-			   		<input type = "text" name = "city" value="{{ city }}" class="form-control input-lg" placeholder="City">
-			   	</div>
-			   	<div class="col-xs-5 col-md-5"> 
-			   		<input type = "text" name = "state" value="{{ state }}" class="form-control input-lg" placeholder="State">
-			   	</div>
-			   	<div class="col-xs-3 col-md-3"> 
-			   		<input type = "text" name = "zip" value="{{ zip }}" class="form-control input-lg" placeholder="Zip Code">
-			   	</div>
-			</div>
-		
-		<br>
-			<!--div class="row">  
-				<div class="col-xs-2 col-md-2"><strong>Select Profile Picture</strong>
-				</div>
+          submitHandler: function(form) {
+            form.submit();
+          }
 
-	      		<div class="fileinput fileinput-new" data-provides="fileinput">
-	      		<div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-					<img data-src="holder.js/100%x100%" alt="...">
-	  			</div>
-	  				<div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
-	  				<div>
-						<div class="btn btn-default btn-file">
-						  	<span class="fileinput-new"><button type="button" class="btn btn-success btn-sm" ><span class="glyphicon glyphicon-plus"></span> Select Image</button></span>
-						  	<span class="fileinput-exists"><button type="button" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"></span>Change</button></span>
-	    				  	<input type="file" name="">
-	    				</div>
-	   			 		<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput"><button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-minus"></span> Remove</button></a>
-	  				</div>
-				</div>
-			</div-->
-        <br>
-		<button type="submit" value = "Submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok"></span> Submit</button>
-         </form>
-        </div>
-
+        });
+    });
+    </script>
+    
+<div class="jumbotron">
+   <form action="/submitProfile" method="POST" id="profile"  novalidate="novalidate">
+      <!-- The method is the HTTP method used and action is the address sent to server -->
+      <legend>Personal Information </legend>
+      <div class="row input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+         <div class="col-xs-6 col-md-6"> 
+            <input type = "text" name = "fname" value="{{ firstname }}" class="form-control input-lg" placeholder="First Name">
+         </div>
+         <div class="col-xs-6 col-md-6"> 
+            <input type = "text" name = "lname" value="{{ lastname }}" class="form-control input-lg" placeholder="Last Name">
+         </div>
+      </div>
+      <br>
+      <div class="row input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span> 
+         <div class="col-xs-6 col-md-6">
+            <input  type = "text" name = "phone" value="{{ phone }}" class="form-control input-lg" placeholder="Phone Number">
+         </div>
+      </div>
+      <br>
+      <div class="row input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span> 
+         <div class="col-xs-12 col-md-12">
+            <input  type = "text" name = "address" value="{{ address }}" class="form-control input-lg" placeholder="Street Address">
+         </div>
+      </div>
+      <br>
+      <div class="row input-group">
+         <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+         <div class="col-xs-4 col-md-4"> 
+            <input type = "text" name = "city" value="{{ city }}" class="form-control input-lg" placeholder="City">
+         </div>
+         <!--div class="col-xs-5 col-md-5"> 
+            <input type = "text" name = "state" value="{{ state }}" class="form-control input-lg" placeholder="State">
+         </div -->
+         <div class="col-xs-5 col-md-5">
+            <select type="text" name="state" value="{{ state }}" class="form-control input-lg" placeholder="State">
+              <option>{% if state %} {{ state }} {% else %} Select a State {% endif %}</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+         <div class="col-xs-3 col-md-3"> 
+            <input type = "text" name = "zip" value="{{ zip }}" class="form-control input-lg" placeholder="Zip Code">
+         </div>
+      </div>
+      <br>
+      <br>
+      <button type="submit" value = "Submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+   </form>
+</div>
 {% endblock %}

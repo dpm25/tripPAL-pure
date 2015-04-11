@@ -1,8 +1,53 @@
 {% extends "base_template/base.html" %}
 {% block bodycontent %}
 
+<script type="text/javascript">
+    $(function() {
+      $("#contact").validate(
+        {
+          rules: 
+          {
+            from: 
+            {
+              required: true,
+              email: true
+            },
+            subject: 
+            {
+              required: true
+            },
+            message: 
+            {
+              required: true
+            }
+          },
+          messages: 
+          {
+            from: 
+            {
+              required: "Please enter a valid email"
+            },
+            subject: 
+            {
+              required: "Please put in a subject...so we can delete with out opening this"
+            },
+            message: 
+            {
+              required: "Please enter a message silly goose!"
+            }
+          },
+
+          submitHandler: function(form) {
+            form.submit();
+          }
+
+        });
+    });
+
+  </script>
+
         <div class="jumbotron">
-          <form action="/contactUs" method="POST"> <!-- The method is the HTTP method used and action is the address sent to server -->
+          <form action="/contactUs" method="POST" id="contact"> <!-- The method is the HTTP method used and action is the address sent to server -->
           <legend>Tell us what can we do for you... </legend>   
           <div class="row input-group">  
              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
