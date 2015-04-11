@@ -1,17 +1,24 @@
 {% extends "base_template/base.html" %}
 {% block bodycontent %}
-      
       <div class="jumbotron">
         <h1 align="center">tripPAL</h1>
 		<p align = "center">Search by entering your desired city destination:</p>
+			
 			<form = action="/searchPost" method = "POST" align = "center">
 			<select name = "type">
 				<option value = "Commute">Commute</option>
 				<option value = "Trip">Trip</option>
 			</select>
-			<input type = "text" name = "searchBar"><br><br>
+			<input id = "autocomplete" type = "text" name = "searchBar" onFocus="geolocate()" size="50"></input><br><br>
+			<input type = "hidden" class="field" name = "street_number" id="street_number" disabled="true"></input>
+			<input type = "hidden" class="field" name = "route" id="route" disabled="true"></input>
+			<input type = "hidden" class="field" id="locality"disabled="true"></input>
+			<input type = "hidden" class="field" id="administrative_area_level_1" disabled="true"></input>
+			<input type = "hidden" class="field" id="postal_code" disabled="true"></input>
+			<input type = "hidden" class="field" id="country" disabled="true"></input>
 			<input type = "submit" value = "Search"><br>
 			</form>
+			
         <!--p align="center"><a id="sign-up-button" class="btn btn-lg btn-success" href=""
           role="button">Sign up with Google</a></p -->
       </div>

@@ -36,15 +36,15 @@ class AcceptPost(webapp2.RequestHandler):
 		
 		elif choice == 'c':
 			commute = Commute()
-			commute.name = self.request.get('name')
+			commute.name = self.request.get('name_commute')
 			commute.creator = user.nickname()
-			commute.origin_city = self.request.get('origin_city')
-			commute.origin_state = self.request.get('origin_state')
-			commute.origin_zip = self.request.get('origin_zip')
-			commute.dest_city = self.request.get('dest_city')
-			commute.dest_state = self.request.get('dest_state')
-			commute.dest_zip = self.request.get('dest_zip')
-			commute.description = self.request.get('description')
+			commute.origin_city = self.request.get('origin_city_commute')
+			commute.origin_state = self.request.get('origin_state_commute')
+			commute.origin_zip = self.request.get('origin_zip_commute')
+			commute.dest_city = self.request.get('dest_city_commute')
+			commute.dest_state = self.request.get('dest_state_commute')
+			commute.dest_zip = self.request.get('dest_zip_commute')
+			commute.description = self.request.get('description_commute')
 			monday = self.request.get('monday')
 			if monday:
 				commute.monday = True
