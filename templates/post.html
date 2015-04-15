@@ -6,7 +6,7 @@
 
 		<form action = "/acceptPost" method = "POST">
 	  		<div class="form-group">
-        	<label class="col-xs-3 control-label">Select what you want to create:</label>	
+        		<label class="col-xs-3 control-label">Select what you want to create:</label>	
         	
 				<select name = "type" id="type" class="type">
 					<option></option>
@@ -77,14 +77,14 @@
 						<div class="col-xs-3 col-md-3"> 
 						   	<input type = "text" class="form-control input-xs" placeholder="Destination Zip Code" id="postal_code" name="dest_zip">
 						</div>
-					</div> 
+					</div>
+				
 					<div class="row input-group"> 
-						<div class="row input-group">
+						
 							<label class="col-xs-3 control-label"> </label>
 							<input type="hidden" id="country" disabled="true" placeholder="Country">
-						</div>	
-						</div>
 					</div>
+				</div>
 	
 					<div class="form-group">
 						<label class="col-xs-3 control-label">Enter your contact information :</label>
@@ -101,39 +101,135 @@
 					</div>
 					<button type="button" type = "submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span value = "Submit Trip"> Submit</button>
 				</div>
+			</div>
 			
 			
 			<div id = 'commute-spot'>
-				Enter the commute name: <br> 
-				<input type = "text" name = "name_commute"><br><br> 
+				<div class = "form-group">
+		        	<label class="col-xs-3 control-label">Enter the commute name: </label>
+					<div class="row input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+						<div class="col-xs-4 col-md-4">
+				   			<input type = "text" name = "name_commute" class="form-control input-xs" placeholder="Commute Name...">
+				   		</div>
+					</div>
+				</div>	 		
+				<div class="form-group">
+		        	<label class="col-xs-3 control-label">Starting at:</label>
+					<div class="row input-group">  
+			        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+			        	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" name = "origin_city_commute"  class="form-control input-xs" placeholder="Origin City">
+					   	</div>
+					   	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" name = "origin_state_commute" class="form-control input-xs" placeholder="Origin State">
+					   	</div> 
+						<div class="col-xs-3 col-md-3"> 
+						   	<input type = "text" name = "origin_zip_commute" class="form-control input-md" placeholder="Origin Zip Code">
+						</div>
+					</div> 
+				</div>
+
+				<div class="form-group">
+		        	<label class="col-xs-3 control-label">Ending at:</label>
+		        	<div class="row input-group">
+		        		<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+		        		<div class="col-xs-4 col-md-4">
+		        			<input id="street_number1" class="form-control input-xs" placeholder="Street Number" ></input>
+		        		</div>
+						<div class="col-xs-4 col-md-4">
+							<input id="route1" class="form-control input-xs" placeholder="Route"></input>
+						</div>
+					</div>
+					<br>
+					<label class="col-xs-3 control-label"></label>
+					<div class="row input-group">  
+			        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+			        	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text"   class="form-control input-xs" placeholder="Destination City" id="locality1" name="dest_city_commute">
+					   	</div>
+					   	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" class="form-control input-xs" placeholder="Destination State"  id="administrative_area_level_11" name="dest_state_commute">
+					   	</div> 
+						<div class="col-xs-3 col-md-3"> 
+						   	<input type = "text" class="form-control input-xs" placeholder="Destination Zip Code"  id="postal_code1" name="dest_zip_commute">
+						</div>
+					</div> 
+					<div class="row input-group"> 
+						<div class="row input-group"> 
+							<label class="col-xs-3 control-label"> </label>
+							<input type="hidden" id="country1" disabled="true" placeholder="Country">
+						</div>
+					</div>	
+				</div>
 				
-				Enter your original location: <br> 
-				<label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label> 
-				<input type = "text" name = "origin_city_commute">&nbsp&nbsp
-				<label>State&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "origin_state_commute"><br>
-				<label>Zipcode&nbsp&nbsp&nbsp&nbsp&nbsp</label><input type = "text" name = "origin_zip_commute"><br><br>
-				
-				Enter your destination: <br>
-				<label>Street Address</label>
-				<input id="street_number1"></input>
-				<input id="route1"></input>
-				<label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
-				<input id="locality1" type="text" name="dest_city_commute">&nbsp&nbsp
-				<label>State&nbsp&nbsp&nbsp&nbsp&nbsp</label><input id="administrative_area_level_11" type="text" name="dest_state_commute"><br>
-				<label>Zipcode&nbsp&nbsp&nbsp&nbsp&nbsp</label><input id="postal_code1" type="text" name="dest_zip_commute"><br><br>
-				<input type="hidden" id="country1" disabled="true"></input>
-				
-				Monday: <input type = "checkbox" name = "monday" value = "monday">
-				Tuesday: <input type = "checkbox" name = "tuesday" value = "tuesday">
-				Wednesday: <input type = "checkbox" name = "wednesday" value = "wednesday">
-				Thursday: <input type = "checkbox" name = "thursday" value = "thursday">
-				Friday: <input type = "checkbox" name = "friday" value = "friday">
-				Saturday: <input type = "checkbox" name = "saturday" value = "saturday">
-				Sunday: <input type = "checkbox" name = "sunday" value = "sunday"><br><br>
-				Describe the nature of your trip:<br>
-				<textarea name = "description_commute" rows = "10" cols = "50" onclick="this.focus();this.select()" placeholder="Enter description here..."></textarea> <br><br>
-				<input type = "submit" value = "Submit Commute"><br>
-			</div>
+				 <div class="row">	
+           			 <div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "monday" value = "monday">
+                    		</span>
+                    		<label class="btn btn-success active">Mon</label>
+                		</div>
+                	  </div>
+                	  <div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "tuesday" value = "tuesday">
+                    		</span>
+                    		<label class="btn btn-primary active">Tue</label>
+                		</div>
+                		</div>
+                		<div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "wednesday" value = "wednesday">
+                    		</span>
+                    		<label class="btn btn-info active">Wed</label>
+                		</div>
+                		</div>
+                		<div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "thursday" value = "thursday">
+                    		</span>
+                    		<label class="btn btn-default active">Thu</label>
+                		</div>
+                		</div>
+                		<div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "friday" value = "friday">
+                    		</span>
+                    		<label class="btn btn-warning active" >Fri</label>
+                		</div>
+                		</div>
+                		<div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "saturday" value = "saturday">
+                    		</span>
+                    		<label class="btn btn-danger active">Sat</label>
+                		</div>
+                		</div>
+                		<div class="col-xs-1">
+                		<div class="input-group">
+                    		<span class="input-group-addon beautiful">
+                    	    <input type="checkbox" name = "sunday" value = "sunday">
+                    		</span>
+                    		<label class="btn btn-success active">Sun</label>
+                		</div>
+                		</div> 		
+            	</div>
+				<br>
+					<div class="form-group">
+						<label class="col-xs-3 control-label">Describe the nature of your trip:</label>
+						<textarea name = "description_commute" rows = "12" cols = "50" onclick="this.focus();this.select()" placeholder="Enter description here..."></textarea> 
+					</div>
+					<button type="button" type = "submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span value = "Submit Commute"> Submit</button>
+		
+			
+
 		</form>
 		<script src="static/form.js"></script>
 	</div>

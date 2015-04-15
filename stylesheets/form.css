@@ -9,3 +9,5 @@
 #search-place{
 	display: none;
 }
+
+$('#timepicker1').timepicker();
