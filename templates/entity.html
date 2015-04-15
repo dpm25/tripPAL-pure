@@ -12,6 +12,7 @@
         		<br><div class="row input-group">
 				<label class="col-xs-3 control-label">Origin City:</label>{{entity.origin_city}}
 				</div>
+<<<<<<< HEAD
 				<br><div class="row input-group">
 				<label class="col-xs-3 control-label">Origin State:</label>  {{entity.origin_state}}  </div>
 				<br><div class="row input-group">
@@ -22,9 +23,23 @@
 				<label class="col-xs-3 control-label">Destination Zip:</label>{{entity.dest_zip}}</div>
 				<br><div class="row input-group">
 				<label class="col-xs-3 control-label">Description:</label>{{entity.description}}</div> 
+=======
+				<br>
+				<label class="col-xs-3 control-label">Origin State:</label><div class="row input-group">  {{entity.origin_state}}  </div>
+				<br>
+				<label class="col-xs-3 control-label">Origin Zip:</label> <div class="row input-group">{{entity.origin_zip}}</div><br>
+				<label class="col-xs-3 control-label">Destination Address:</label><div class="row input-group">{{entity.dest_streetnum}} {{entity.dest_route}}</div> <br><br>
+				<label class="col-xs-3 control-label">Destination City:</label><div class="row input-group">{{entity.dest_city}}</div> <br>
+				<label class="col-xs-3 control-label">Destination State:</label><div class="row input-group">{{entity.dest_state}} </div> <br>
+				<label class="col-xs-3 control-label">Destination Zip:</label><div class="row input-group">{{entity.dest_zip}}</div>
+				
+				<br>
+				<label class="col-xs-3 control-label">Description:</label> <div class="row input-group">{{entity.description}}</div>  <br>
+>>>>>>> eb2176acde9453cbe9d437766af6ba09126d0c73
         	</div>
 
 		{% else %}
+<<<<<<< HEAD
 		<div class="form-group"><div class="row input-group">
 			<label class="col-xs-3 control-label">Commute name:</label> {{entity.name}}</div>
 			<br><div class="row input-group">
@@ -40,6 +55,18 @@
 			<label class="col-xs-3 control-label">Destination Zip:</label> {{entity.dest_zip}}</div>
 			<br><div class="row input-group">
 			<label class="col-xs-3 control-label">Description:</label> {{entity.description}}</div>
+=======
+		<div class="form-group">
+			<label class="col-xs-3 control-label">Commute name:</label> {{entity.name}}<br><br>
+			<label class="col-xs-3 control-label">Origin City:</label> {{entity.origin_city}}<br><br>
+			<label class="col-xs-3 control-label">Origin State:</label> {{entity.origin_state}} <br><br>
+			<label class="col-xs-3 control-label">Origin Zip:</label> {{entity.origin_zip}}<br><br>
+			<label class="col-xs-3 control-label">Destination Address:</label><div class="row input-group">{{entity.dest_streetnum}} {{entity.dest_address}}</div> <br><br>
+			<label class="col-xs-3 control-label">Destination City:</label> {{entity.dest_city}}<br><br>
+			<label class="col-xs-3 control-label">Destination State:</label> {{entity.dest_state}}<br><br>
+			<label class="col-xs-3 control-label">Destination Zip:</label> {{entity.dest_zip}}<br><br>
+			<label class="col-xs-3 control-label">Description:</label> {{entity.description}}<br>
+>>>>>>> eb2176acde9453cbe9d437766af6ba09126d0c73
 		</div> 	
 		<div class="form-group">
 			<label class="col-xs-3 control-label">Days:</label> 
@@ -79,9 +106,15 @@
 					<label clicl="" class="btn btn-success active">Sun</label>
 				</div>
 			{% endif %}
+<<<<<<< HEAD
 				</div>
 		</div>
 		
+=======
+
+		</div><br><br>
+		</div>
+>>>>>>> eb2176acde9453cbe9d437766af6ba09126d0c73
 		{% endif %}
 		<div id = "comment_box">
 			{% if logged_in == 0 %}

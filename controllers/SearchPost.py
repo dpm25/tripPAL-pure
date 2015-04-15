@@ -33,19 +33,19 @@ class SearchPost (webapp2.RequestHandler):
 			elif kind == "Commute":
 				q = Commute.query().filter(Commute.dest_city == user_input).order(-Commute.date).fetch()
 		else:
-			logging.info("do we get here")
 			if kind == "Trip":
 				q = Trip.query().filter(Trip.dest_route == route).order(-Trip.time).fetch()
 		
 			elif kind == "Commute":
 				q = Commute.query().filter(Commute.dest_address == route).order(-Commute.date).fetch()
 
-			if (not q):
+
+			if (len(q) == 0):
 				if kind == "Trip":
 					q = Trip.query().filter(Trip.dest_city == locality).order(-Trip.time).fetch()
 		
 				elif kind == "Commute":
-					q = Commute.query().filter(Commute.dest_address == locality).order(-Commute.date).fetch()
+					q = Commute.query().filter(Commute.dest_city == locality).order(-Commute.date).fetch()
 
 		
 		trips = 0
