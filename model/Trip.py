@@ -9,6 +9,8 @@ class Trip (ndb.Model):
 	origin_state = ndb.StringProperty()
 	origin_zip = ndb.StringProperty()
 	
+	dest_streetnum = ndb.IntegerProperty(indexed = True)
+	dest_route = ndb.StringProperty(indexed = True)
 	dest_city = ndb.StringProperty(indexed = True)
 	dest_state = ndb.StringProperty()
 	dest_zip = ndb.StringProperty()

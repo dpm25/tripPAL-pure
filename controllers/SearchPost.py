@@ -17,13 +17,36 @@ def render_template(handler, templatename, templatevalues):
 
 class SearchPost (webapp2.RequestHandler):
 	def post (self):
-		type = self.request.get('type')
-		search = self.request.get('searchBar')
-		if type == "Trip":
-			q = Trip.query().filter(Trip.dest_city == search).order(-Trip.time).fetch()
+		street_number = self.request.get('street_number')
+		route = self.request.get('route')
+		logging.info("hello route" + route)
+		locality = self.request.get('locality')
+		logging.info("hello locality" + locality)
+		kind = self.request.get('type')
+
+		user_input = self.request.get('searchBar')
+
+		if (route is None or route == ""):
+			if kind == "Trip":
+				q = Trip.query().filter(Trip.dest_city == user_input).order(-Trip.time).fetch()
 		
-		elif type == "Commute":
-			q = Commute.query().filter(Commute.dest_city == search).order(-Commute.date).fetch()
+			elif kind == "Commute":
+				q = Commute.query().filter(Commute.dest_city == user_input).order(-Commute.date).fetch()
+		else:
+			logging.info("do we get here")
+			if kind == "Trip":
+				q = Trip.query().filter(Trip.dest_route == route).order(-Trip.time).fetch()
+		
+			elif kind == "Commute":
+				q = Commute.query().filter(Commute.dest_address == route).order(-Commute.date).fetch()
+
+			if (not q):
+				if kind == "Trip":
+					q = Trip.query().filter(Trip.dest_city == locality).order(-Trip.time).fetch()
+		
+				elif kind == "Commute":
+					q = Commute.query().filter(Commute.dest_address == locality).order(-Commute.date).fetch()
+
 		
 		trips = 0
 	
