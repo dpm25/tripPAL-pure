@@ -76,7 +76,7 @@
     </script>
     
 <div class="jumbotron">
-  <button id="edit">{% if registered == 1 %}Edit your Profile{% else %}Create your profile{% endif %}</button>
+  <button id="edit" class="btn btn-primary btn-md">{% if registered == 1 %}Edit your Profile{% else %}Create your profile{% endif %}</button>
   <div id="edit-profile">
      <form action="/submitProfile" method="POST" id="profile"  novalidate="novalidate">
         <!-- The method is the HTTP method used and action is the address sent to server -->

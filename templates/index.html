@@ -1,23 +1,92 @@
 {% extends "base_template/base.html" %}
 {% block bodycontent %}
-      <div class="jumbotron">
+      <div class="jumbotron" >
+
+      	<div id="myCarousel" class="carousel slide" data-interval="10000" data-ride="carousel">
+    	<!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            
+        </ol>   
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="active item">
+            	<img src="http://healthfitnessrevolution.com/wp-content/uploads/2014/01/travel-health.jpg" alt="#">        
+         		<div class="carousel-caption" >
+		<div class="container" >
+             <form action="/searchPost" method = "POST" align = "center">
+             	<div class="col-xs-4" class="col-md-4">
+             	</div>
+             	<div class="col-xs-4" class="col-md-4">
+	             	<select name = "type" class="form-control input-md" class="input-xxlarge">
+							<option value = "Commute">Commute</option>
+							<option value = "Trip">Trip</option>
+					</select>
+				</div>
+				<br><br>
+             	<div class="input-group" align = "center"> 	
+             			
+	                 <input class="btn btn-lg" placeholder="Enter Location" id = "autocomplete" type = "text" name = "searchBar" onFocus="geolocate()" size="50">
+	                 <input type = "hidden" class="field" name = "street_number" id="street_number" disabled="true"></input>
+					<input type = "hidden" class="field" name = "route" id="route" disabled="true"></input>
+					<input type = "hidden" class="field" id="locality"disabled="true"></input>
+					<input type = "hidden" class="field" id="administrative_area_level_1" disabled="true"></input>
+					<input type = "hidden" class="field" id="postal_code" disabled="true"></input>
+					<input type = "hidden" class="field" id="country" disabled="true"></input>
+					<br><br>
+	                 <!--input type = "submit" value = "Search"-->
+	                 <button value = "Search" class="btn btn-info btn-lg" type="submit">Submit</button>
+              </div>
+             </form>
+    	 </div>
+                </div>
+            </div>
+            <div class="item">
+            <img src="http://cosmosnotes.com/wp-content/uploads/2014/11/friendship.jpg" alt="#"> 
+                
+                <div class="carousel-caption">
+                 <div class="container" >
+             <form action="/searchPost" method = "POST" align = "center">
+             	<div class="col-xs-4" class="col-md-4">
+             	</div>
+             	<div class="col-xs-4" class="col-md-4">
+	             	<select name = "type" class="form-control input-md" class="input-xxlarge">
+							<option value = "Commute">Commute</option>
+							<option value = "Trip">Trip</option>
+					</select>
+				</div>
+				<br><br>
+             	<div class="input-group" align = "center"> 	
+             			
+	                 <input class="btn btn-lg" placeholder="Enter Location" id = "autocomplete" type = "text" name = "searchBar" onFocus="geolocate()" size="50">
+	                 <input type = "hidden" class="field" name = "street_number" id="street_number" disabled="true"></input>
+					<input type = "hidden" class="field" name = "route" id="route" disabled="true"></input>
+					<input type = "hidden" class="field" id="locality"disabled="true"></input>
+					<input type = "hidden" class="field" id="administrative_area_level_1" disabled="true"></input>
+					<input type = "hidden" class="field" id="postal_code" disabled="true"></input>
+					<input type = "hidden" class="field" id="country" disabled="true"></input>
+					<br><br>
+	                 <!--input type = "submit" value = "Search"-->
+	                 <button value = "Search" class="btn btn-info btn-lg" type="submit">Submit</button>
+              </div>
+             </form>
+    	 </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
         <h1 align="center">tripPAL</h1>
-		<p align = "center">Search by entering your desired city destination:</p>
-			
-			<form = action="/searchPost" method = "POST" align = "center">
-			<select name = "type">
-				<option value = "Commute">Commute</option>
-				<option value = "Trip">Trip</option>
-			</select>
-			<input id = "autocomplete" type = "text" name = "searchBar" onFocus="geolocate()" size="50"></input><br><br>
-			<input type = "hidden" class="field" name = "street_number" id="street_number" disabled="true"></input>
-			<input type = "hidden" class="field" name = "route" id="route" disabled="true"></input>
-			<input type = "hidden" class="field" id="locality"disabled="true"></input>
-			<input type = "hidden" class="field" id="administrative_area_level_1" disabled="true"></input>
-			<input type = "hidden" class="field" id="postal_code" disabled="true"></input>
-			<input type = "hidden" class="field" id="country" disabled="true"></input>
-			<input type = "submit" value = "Search"><br>
-			</form>
+		<p align = "center">Search by entering your desired city destination</p>
+
 			
         <!--p align="center"><a id="sign-up-button" class="btn btn-lg btn-success" href=""
           role="button">Sign up with Google</a></p -->

@@ -5,68 +5,83 @@
 	<div class = "jumbotron">
 		{% if type == 0 %}
 			<div class="form-group">
+				<div class="row input-group">
         		<label class="col-xs-3 control-label">Trip name:</label>
-        		<div class="row input-group">{{entity.name}}
+        		{{entity.name}}
         		</div>
-        		<br>
-				<label class="col-xs-3 control-label">Origin City:</label><div class="row input-group">{{entity.origin_city}}
+        		<br><div class="row input-group">
+				<label class="col-xs-3 control-label">Origin City:</label>{{entity.origin_city}}
 				</div>
-				<br>
-				<label class="col-xs-3 control-label">Origin State:</label><div class="row input-group">  {{entity.origin_state}}  </div>
-				<br>
-				<label class="col-xs-3 control-label">Origin Zip:</label> <div class="row input-group">{{entity.origin_zip}}</div><br>
-				<label class="col-xs-3 control-label">Destination City:</label><div class="row input-group">{{entity.origin_city}}</div> <br>
-				<label class="col-xs-3 control-label">Origin City:</label><div class="row input-group">{{entity.dest_city}} </div><br>
-				<label class="col-xs-3 control-label">Destination State:</label><div class="row input-group">{{entity.dest_state}} </div> <br>
-				<label class="col-xs-3 control-label">Destination Zip:</label><div class="row input-group">{{entity.dest_zip}}</div>
-				<br>
-				<label class="col-xs-3 control-label">Description:</label> <div class="row input-group">{{entity.description}}</div>  <br>
+				<br><div class="row input-group">
+				<label class="col-xs-3 control-label">Origin State:</label>  {{entity.origin_state}}  </div>
+				<br><div class="row input-group">
+				<label class="col-xs-3 control-label">Origin Zip:</label> {{entity.origin_zip}}</div><br><div class="row input-group">
+				<label class="col-xs-3 control-label">Destination City:</label>{{entity.origin_city}}</div> <br><div class="row input-group">
+				<label class="col-xs-3 control-label">Origin City:</label>{{entity.dest_city}} </div><br><div class="row input-group">
+				<label class="col-xs-3 control-label">Destination State:</label>{{entity.dest_state}} </div> <br><div class="row input-group">
+				<label class="col-xs-3 control-label">Destination Zip:</label>{{entity.dest_zip}}</div>
+				<br><div class="row input-group">
+				<label class="col-xs-3 control-label">Description:</label>{{entity.description}}</div> 
         	</div>
-		{% else %}
-		<div class="form-group">
-			<label class="col-xs-3 control-label">Commute name:</label> <div class="row input-group">{{entity.name}}</div>
-			<br>
-			<label class="col-xs-3 control-label">Origin City:</label> <div class="row input-group">{{entity.origin_city}}</div>
-			<br>
-			<label class="col-xs-3 control-label">Origin State:</label> <div class="row input-group">{{entity.origin_state}} </div>
-			<br>
-			<label class="col-xs-3 control-label">Origin Zip:</label> <div class="row input-group">{{entity.origin_zip}}</div>
-			<br>
-			<label class="col-xs-3 control-label">Destination City:</label> <div class="row input-group">{{entity.dest_city}}</div><br>
-			<label class="col-xs-3 control-label">Destination State:</label><div class="row input-group"> {{entity.dest_state}}</div><br>
 
-			<label class="col-xs-3 control-label">Destination Zip:</label> <div class="row input-group">{{entity.dest_zip}}</div>
-			<br>
-			<label class="col-xs-3 control-label">Description:</label> <div class="row input-group">{{entity.description}}</div>
+		{% else %}
+		<div class="form-group"><div class="row input-group">
+			<label class="col-xs-3 control-label">Commute name:</label> {{entity.name}}</div>
+			<br><div class="row input-group">
+			<label class="col-xs-3 control-label">Origin City:</label> {{entity.origin_city}}</div>
+			<br><div class="row input-group">
+			<label class="col-xs-3 control-label">Origin State:</label> {{entity.origin_state}} </div>
+			<br><div class="row input-group">
+			<label class="col-xs-3 control-label">Origin Zip:</label> {{entity.origin_zip}}</div>
+			<br><div class="row input-group">
+			<label class="col-xs-3 control-label">Destination City:</label> {{entity.dest_city}}</div><br><div class="row input-group">
+			<label class="col-xs-3 control-label">Destination State:</label> {{entity.dest_state}}</div><br>
+			<div class="row input-group">
+			<label class="col-xs-3 control-label">Destination Zip:</label> {{entity.dest_zip}}</div>
+			<br><div class="row input-group">
+			<label class="col-xs-3 control-label">Description:</label> {{entity.description}}</div>
 		</div> 	
 		<div class="form-group">
 			<label class="col-xs-3 control-label">Days:</label> 
-			<div class="btn-group" data-toggle="buttons">
-
+				<div class="row">
 			{%if entity.monday %}
-				Mon
+				<div class="col-xs-1">
+					<label class="btn btn-success active">Mon</label>
+				</div>	
 			{% endif %}
 			{%if entity.tuesday %}
-				Tue
+				<div class="col-xs-1">
+					<label class="btn btn-primary active">Tue</label>
+				</div>
 			{% endif %}
 			{%if entity.wednesday %}
-				Wed
+				<div class="col-xs-1">
+					<label class="btn btn-info active">Wed</label>
+				</div>
 			{% endif %}
 			{%if entity.thursday %}
-				Thu
+				<div class="col-xs-1">
+					<label class="btn btn-default active">Thu</label>
+				</div>	
 			{%endif %}
 			{%if entity.friday %}
-				Fri
+				<div class="col-xs-1">
+					<label class="btn btn-warning active" >Fri</label>
+				</div>
 			{% endif %}
 			{%if entity.saturday %}
-				Sat
+				<div class="col-xs-1">
+					<label class="btn btn-danger active">Sat</label>
+				</div>
 			{% endif %}
 			{%if entity.sunday %}
-				Sun
+				<div class="col-xs-1">
+					<label clicl="" class="btn btn-success active">Sun</label>
+				</div>
 			{% endif %}
-
+				</div>
 		</div>
-		<br>
+		
 		{% endif %}
 		<div id = "comment_box">
 			{% if logged_in == 0 %}
