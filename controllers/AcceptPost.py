@@ -31,6 +31,8 @@ class AcceptPost(webapp2.RequestHandler):
 			trip.dest_zip = self.request.get('dest_zip')
 			trip.contact = self.request.get('contactInfo')
 			trip.description = self.request.get('description')
+			trip.dest_streetnum = int(self.request.get('streetNum'))
+			trip.dest_route = self.request.get('route')
 			trip.time = int(time.time())
 			trip.put()
 		
@@ -45,6 +47,8 @@ class AcceptPost(webapp2.RequestHandler):
 			commute.dest_state = self.request.get('dest_state_commute')
 			commute.dest_zip = self.request.get('dest_zip_commute')
 			commute.description = self.request.get('description_commute')
+			commute.dest_streetnum = int(self.request.get('streetNum_commute'))
+			commute.dest_address = self.request.get('route_commute')
 			monday = self.request.get('monday')
 			if monday:
 				commute.monday = True

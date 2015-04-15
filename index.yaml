@@ -18,8 +18,26 @@ indexes:
 
 - kind: Commute
   properties:
+  - name: creator
+  - name: date
+    direction: desc
+
+- kind: Commute
+  properties:
+  - name: dest_address
+  - name: date
+    direction: desc
+
+- kind: Commute
+  properties:
   - name: dest_city
   - name: date
+    direction: desc
+
+- kind: Trip
+  properties:
+  - name: creator
+  - name: time
     direction: desc
 
 - kind: Trip
@@ -32,5 +50,11 @@ indexes:
 - kind: Trip
   properties:
   - name: dest_city
+  - name: time
+    direction: desc
+
+- kind: Trip
+  properties:
+  - name: dest_route
   - name: time
     direction: desc
