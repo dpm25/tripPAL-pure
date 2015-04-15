@@ -2,48 +2,106 @@
 {% block bodycontent %}
 	<link rel="stylesheet" type = "text/css" href="stylesheets/form.css">
 	
-	<div class="jumbotron" ">
+	<div class="jumbotron" >
+
 		<form action = "/acceptPost" method = "POST">
-			
-			Select what you want to create:
-			<select name = "type" id="type" class="type">
-				<option></option>
-				<option value = "c">Commute</option>
-				<option value = "t">Trip</option>
-			</select>
-			
+	  		<div class="form-group">
+        	<label class="col-xs-3 control-label">Select what you want to create:</label>	
+        	
+				<select name = "type" id="type" class="type">
+					<option></option>
+					<option value = "c">Commute</option>
+					<option value = "t">Trip</option>
+				</select>
+			</div>
 			<div id = 'search-place'>
-				<br>Search by address or name:<br>
-				<input id="autocomplete" type="text" name="searchBar" onFocus="geolocate()" size="50"></input><br><br>
+				<div class="form-group">
+					<label class="col-xs-3 control-label">Search by address or name:</label>
+					<div class="row input-group">  
+			        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+			     		<div class="col-xs-4 col-md-4">
+							<input id="autocomplete" type="text" name="searchBar" onFocus="geolocate()" size="50" class="form-control input-md" placeholder="Enter location"></input>
+						</div>
+					</div>
+				</div>
 			</div>
-			
+
 			<div id = 'trip-spot'>
-				Enter the trip name: <br> 
-				<input type = "text" name = "name"><br><br> 
+				<div class="form-group">
+		        	<label class="col-xs-3 control-label">Enter the trip name:</label>
+					<div class="row input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-star"></i>
+					</span>
+						<div class="col-xs-4 col-md-4">
+				   			<input type = "text" name = "name" class="form-control input-md" placeholder="Trip Name...">
+				   		</div>
+					</div>
+				</div>	
+				<div class="form-group">
+		        	<label class="col-xs-3 control-label">Starting at:</label>
+					<div class="row input-group">  
+			        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+			        	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" name = "origin_city"  class="form-control input-xs" placeholder="Origin City">
+					   	</div>
+					   	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" name = "origin_state" class="form-control input-xs" placeholder="Origin State">
+					   	</div> 
+						<div class="col-xs-3 col-md-3"> 
+						   	<input type = "text" name = "origin_zip" class="form-control input-md" placeholder="Origin Zip Code">
+						</div>
+					</div> 
+				</div>
 				
-				Enter your original location: <br> 
-				<label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label> 
-				<input type = "text" name = "origin_city">&nbsp&nbsp
-				<label>State&nbsp&nbsp&nbsp&nbsp&nbsp </label><input type = "text" name = "origin_state"><br>
-				<label>Zipcode&nbsp&nbsp&nbsp&nbsp&nbsp </label><input type = "text" name = "origin_zip"><br><br>
-				
-				Enter your destination: <br>
-				<label>Street Address</label>
-				<input id="street_number" ></input>
-				<input id="route" ></input>
-				<label>City&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </label>
-				<input id="locality" name="dest_city">&nbsp&nbsp
-				<label>State&nbsp&nbsp&nbsp&nbsp&nbsp </label><input id="administrative_area_level_1" name="dest_state"><br>
-				<label>Zipcode&nbsp&nbsp&nbsp&nbsp&nbsp </label><input id="postal_code" name="dest_zip"><br><br>
-				<input type="hidden" id="country" disabled="true"></input>
-				
-				Enter your contact information (email or phone number): <br>
-				<input type="text" name = "contactInfo"><br><br>
-				
-				Describe the nature of your trip:<br>
-				<textarea name = "description" rows = "10" cols = "50" onclick="this.focus();this.select()" placeholder="Enter description here..."></textarea> <br><br>
-				<input type = "submit" value = "Submit Trip"><br>
-			</div>
+				<div class="form-group">
+		        	<label class="col-xs-3 control-label">Ending at:</label>
+		        	<div class="row input-group">
+		        		<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+		        		<div class="col-xs-4 col-md-4">
+		        			<input id="street_number" class="form-control input-xs" placeholder="Street Number" ></input>
+		        		</div>
+						<div class="col-xs-4 col-md-4">
+							<input id="route" class="form-control input-xs" placeholder="Route"></input>
+						</div>
+					</div>
+					<br>
+					<label class="col-xs-3 control-label"></label>
+					<div class="row input-group">  
+			        	<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+			        	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text"   class="form-control input-xs" placeholder="Destination City" id="locality" name="dest_city">
+					   	</div>
+					   	<div class="col-xs-3 col-md-3"> 
+					   		<input type = "text" class="form-control input-xs" placeholder="Destination State" id="administrative_area_level_1" name="dest_state">
+					   	</div> 
+						<div class="col-xs-3 col-md-3"> 
+						   	<input type = "text" class="form-control input-xs" placeholder="Destination Zip Code" id="postal_code" name="dest_zip">
+						</div>
+					</div> 
+					<div class="row input-group"> 
+						<div class="row input-group">
+							<label class="col-xs-3 control-label"> </label>
+							<input type="hidden" id="country" disabled="true" placeholder="Country">
+						</div>	
+						</div>
+					</div>
+	
+					<div class="form-group">
+						<label class="col-xs-3 control-label">Enter your contact information :</label>
+						<div class="row input-group">  
+			        		<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>		        	
+							<div class="col-xs-5 col-md-5"> 
+								<input type = "text" class="form-control input-xs" type="text" name = "contactInfo" placeholder="(email or phone number)">
+							</div>
+					</div>
+					<br>
+					<div class="form-group">
+						<label class="col-xs-3 control-label">Describe the nature of your trip:</label>
+						<textarea name = "description" rows = "12" cols = "50" onclick="this.focus();this.select()" placeholder="Enter description here..."></textarea> 
+					</div>
+					<button type="button" type = "submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span value = "Submit Trip"> Submit</button>
+				</div>
+			
 			
 			<div id = 'commute-spot'>
 				Enter the commute name: <br> 
