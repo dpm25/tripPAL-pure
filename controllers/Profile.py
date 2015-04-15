@@ -34,18 +34,18 @@ class Profile(webapp2.RequestHandler):
 		errors=[]
 
 		# checking if the first and last name exist
-		if fname is None or fname=="":
-			errors+=["First Name is missing"]
-		if lname is None or fname=="":
-			errors+=['last name is missing']
+		if '<' in fname or 'select' in fname or 'update' in fname or 'javascript' in fname:
+			errors+=["First Name is invalid"]
+		if '<' in lname or 'select' in lname or 'update' in lname or 'javascript' in lname:
+			errors+=['last name is invalid']
 		# checking the length of the phone number
 		if len(phone)<10 or len(phone)>11:
 			errors+=["invalid phone number"]
 		# checking is the address, city, state, and zip exists
-		if address is None or address=="":
-			errors+=["address is missing"]
-		if city is None or city=="":
-			errors+=["city is missing"]
+		if '<' in address or 'select' in address or 'update' in address or 'javascript' in address:
+			errors+=["address is invalid"]
+		if '<' in city or 'select' in city or 'update' in city or 'javascript' in city:
+			errors+=["city is invalid"]
 		if state is None or state=="":
 			errors+=["invalid or missing state"]
 		if len(zip)!=5:
@@ -53,7 +53,7 @@ class Profile(webapp2.RequestHandler):
 
 		if len(errors)>0:
 			for error in errors:
-				render_template(self, 'contactUs.html', {})
+				render_template(self, 'error.html', {})
 		# if no errors in form
 		else:
 			q = UserInfo.query(UserInfo.nickname == nName).fetch()
