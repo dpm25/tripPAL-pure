@@ -56,6 +56,6 @@ class SearchPost (webapp2.RequestHandler):
 		params = {
 			'trip_posted': q,
 			'trips': trips,
-			'type': type
+			'type': kind
 		}
 		render_template(self, 'search.html', params)
