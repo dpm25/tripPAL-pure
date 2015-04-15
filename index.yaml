@@ -24,12 +24,6 @@ indexes:
 
 - kind: Commute
   properties:
-  - name: dest_address
-  - name: date
-    direction: desc
-
-- kind: Commute
-  properties:
   - name: dest_city
   - name: date
     direction: desc
@@ -50,11 +44,5 @@ indexes:
 - kind: Trip
   properties:
   - name: dest_city
-  - name: time
-    direction: desc
-
-- kind: Trip
-  properties:
-  - name: dest_route
   - name: time
     direction: desc
