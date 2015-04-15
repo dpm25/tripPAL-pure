@@ -40,11 +40,11 @@ function toggle(element){
 
 			if (status == 0){
 				element.textContent="Open";
-				element.style.backgroundColor("#808080")
+				element.style.backgroundColor("#808080");
 			}
 			else{
 				element.textContent="Close";
-				element.style.backgroundColor("#0066CC")
+				element.style.backgroundColor("#0066CC");
 			}
 		}
 	};

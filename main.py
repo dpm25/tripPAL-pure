@@ -17,6 +17,7 @@ from controllers.fetchHandler import *
 from controllers.ViewEntityHandler import *
 from controllers.LogoutHandler import *
 from controllers.WeeklyMail import *
+from controllers.ToggleHandler import *
 
 def render_template(handler, templatename, templatevalues):
 	path = os.path.join(os.path.dirname(__file__), "templates/", templatename)
@@ -38,20 +39,24 @@ class HomePageHandler(webapp2.RequestHandler):
 			# checking if we have a UserInfo instance in database
 			if self.is_registered(user):
 
+				registered = 1;
 				email = user.email()
 				params = {
 					'tab':			 1,
 					'user':          user,
-             		'email':         email
+             		'email':         email,
+             		'registered':	 registered
 				}
 				# yes -> getting the path for index.html
 				render_template(self, 'index.html', params)
 
 			else:
+				registered = 0;
 				params = {
 					'tab':			 2,
 					'user':          user,
-             		'email':         email
+             		'email':         email,
+             		'registered':	 registered
 				}
 				render_template(self, 'profile.html', params)
 
@@ -74,5 +79,6 @@ app = webapp2.WSGIApplication([
 	('/fetch', fetchHandler),
 	('/view', ViewEntityHandler),
 	('/logout', LogoutHandler),
-	('/weeklyMail', WeeklyMail)
+	('/weeklyMail', WeeklyMail),
+	('/toggle', ToggleHandler)
 ], debug=True)

@@ -7,6 +7,8 @@ from google.appengine.ext import ndb
 from google.appengine.api import users
 
 from model.User import *
+from model.Trip import *
+from model.Commute import *
 
 
 def render_template(handler, templatename, templatevalues):
@@ -32,6 +34,9 @@ class ViewProfile(webapp2.RequestHandler):
 			state = q[0].state
 			zip = q[0].zip
 
+			trips = Trip.query().filter(Trip.creator == nName).order(-Trip.time).fetch()
+			commutes = Commute.query().filter(Commute.creator == nName).order(-Commute.date).fetch()
+
 			params = {
 				'tab':		2,
 				'user': 	user,
@@ -41,6 +46,9 @@ class ViewProfile(webapp2.RequestHandler):
 				'address': address,
 				'city': city,
 				'state': state,
-				'zip': zip	
+				'zip': zip,	
+				'registered': 1,
+				'trips': trips,
+				'commutes': commutes
 			}
 			render_template(self, 'profile.html', params)

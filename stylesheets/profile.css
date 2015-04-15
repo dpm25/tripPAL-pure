@@ -1,0 +1,32 @@
+#edit-profile{
+	display: none;
+}
+
+.toggle-button{
+	 float:right;      
+      background-color: #0066CC;
+      height:2.9em;
+      margin-top:-0.7em;
+      margin-right: -2.5%;
+      padding-left: 1%;
+      padding-right: 2%;
+
+      text-align: auto;
+      padding-top:0.7em;
+
+      color:white;
+
+      width: 1%;
+}
+
+.toggle-button span{
+	display:none;
+}
+
+.toggle-button:hover{
+	width:20%;
+}
+
+.toggle-button:hover span{
+	display:inline;
+}
